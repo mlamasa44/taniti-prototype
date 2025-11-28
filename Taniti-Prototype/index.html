@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taniti Tourism – Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Simple tab toggle for Weather / Attractions
+    function showTab(tab) {
+      const weatherTab = document.getElementById('tab-weather');
+      const attractionsTab = document.getElementById('tab-attractions');
+      const weatherContent = document.getElementById('content-weather');
+      const attractionsContent = document.getElementById('content-attractions');
+
+      if (tab === 'weather') {
+        weatherTab.classList.add('active');
+        attractionsTab.classList.remove('active');
+        weatherContent.style.display = 'block';
+        attractionsContent.style.display = 'none';
+      } else {
+        attractionsTab.classList.add('active');
+        weatherTab.classList.remove('active');
+        attractionsContent.style.display = 'block';
+        weatherContent.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+<body onload="showTab('weather')">
+  <div class="site-wrapper">
+    <header class="header">
+      <div class="logo">Visit Taniti</div>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="map.html">Map</a>
+        <a href="book-a-stay.html">Book a Stay</a>
+        <a href="plan-a-trip.html">Plan a Trip</a>
+        <a href="about-island.html">About Island</a>
+      </nav>
+    </header>
+
+    <section class="page-heading">
+      <h1>Plan Your Trip to Taniti</h1>
+      <p>Start with your home base, then explore stays, attractions, and local info.</p>
+    </section>
+
+    <main class="home-layout">
+      <!-- LEFT: main content -->
+      <div>
+        <!-- Hero -->
+        <div class="card">
+          <h2>Ready to Plan?</h2>
+          <p>Use the interactive planner to map out your stay, choose lodging, and explore top attractions.</p>
+          <a href="plan-a-trip.html" class="btn-primary">Open Trip Planner</a>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="quick-actions">
+          <div class="card">
+            <h2>Book a Stay</h2>
+            <p>Find family-friendly lodging across the island.</p>
+            <a href="book-a-stay.html" class="btn-secondary">View Options</a>
+          </div>
+          <div class="card">
+            <h2>Explore the Map</h2>
+            <p>See Taniti’s neighborhoods, beaches, and key landmarks.</p>
+            <a href="map.html" class="btn-secondary">Open Map</a>
+          </div>
+          <div class="card">
+            <h2>About Island</h2>
+            <p>Weather, safety, power, holidays, and local rules.</p>
+            <a href="about-island.html" class="btn-secondary">Know Before You Go</a>
+          </div>
+        </div>
+
+        <!-- Map preview -->
+        <div class="card">
+          <h2>Island Overview Map</h2>
+          <p>Use the map to understand where attractions and lodging are located.</p>
+          <div class="map-placeholder">
+            Map preview (click "Open Map" above for details)
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: side panel -->
+      <aside class="side-panel">
+        <div class="side-tabs">
+          <div id="tab-weather" class="side-tab" onclick="showTab('weather')">
+            Weather Forecast
+          </div>
+          <div id="tab-attractions" class="side-tab" onclick="showTab('attractions')">
+            Attractions
+          </div>
+        </div>
+
+        <div id="content-weather" class="side-tab-content">
+          <p><strong>Today:</strong> Warm, light breeze, chance of brief showers.</p>
+          <p><strong>Next few days:</strong> Mix of sun and clouds, typical tropical weather.</p>
+          <p>Pack light layers, sunscreen, and a light rain jacket.</p>
+        </div>
+
+        <div id="content-attractions" class="side-tab-content" style="display:none;">
+          <p><strong>Popular spots:</strong></p>
+          <ul style="margin-left: 16px; margin-top: 4px;">
+            <li>Beachfront Promenade</li>
+            <li>Old Town Market</li>
+            <li>Scenic Overlook Trail</li>
+          </ul>
+          <p>Use the Map or Plan a Trip pages to add these to your itinerary.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      &copy; Taniti Tourism Board – Prototype for D479
+    </footer>
+  </div>
+</body>
+</html>
